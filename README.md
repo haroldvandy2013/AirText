@@ -71,7 +71,7 @@ Maintainers need repository push access and an authenticated [GitHub CLI](https:
    VERSION=0.1.1
    swift test
    bash build.sh
-   lipo -verify_arch arm64 x86_64 dist/AirText.app/Contents/MacOS/AirText
+   lipo dist/AirText.app/Contents/MacOS/AirText -verify_arch arm64 x86_64
    plutil -lint dist/AirText.app/Contents/Info.plist
    /usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' dist/AirText.app/Contents/Info.plist
    codesign --verify --deep --strict --verbose=2 dist/AirText.app
